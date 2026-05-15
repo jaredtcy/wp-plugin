@@ -1,0 +1,50 @@
+/**
+ * wc-quantity-alert.css
+ */
+
+.wcqa-toast {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    z-index: 99999;
+
+    max-width: 360px;
+    padding: 0.85rem 1.25rem;
+    border-radius: 6px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.18);
+
+    background-color: #7f54b3; 
+    color: #ffffff;
+
+    font-family: inherit;
+    font-size: 0.9rem;
+    line-height: 1.45;
+    font-weight: 500;
+
+    opacity: 0;
+    transform: translateY(1rem);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+
+    user-select: none;
+    pointer-events: none;
+}
+
+.wcqa-toast--visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media ( max-width: 480px ) {
+    .wcqa-toast {
+        right: 0.75rem;
+        left: 0.75rem;
+        bottom: 0.75rem;
+        max-width: 100%;
+    }
+}
+
+button[name="update_cart"] {
+    pointer-events: all !important;
+    opacity: 1 !important;
+    cursor: pointer !important;
+}
