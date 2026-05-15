@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: WC Quantity Alert
- * Plugin URI:  https://example.com/wc-quantity-alert
+ * Plugin URI:  https://jaredtest.com/wc-quantity-alert
  * Description: Shows a toast notification when a cart item quantity changes.
  * Version:     8.0.0
  * Author:      Jared Test
