@@ -37,8 +37,6 @@
     } );
 
     // WooCommerce disables the Update cart button until a qty changes.
-    // We keep it enabled so we can demo the "no change = no toast" behaviour.
-    // Would remove this in a real deployment.
     $( document.body ).on( 'updated_cart_totals wc_fragments_loaded wc_fragments_refreshed', function () {
         $( '[name="update_cart"]' ).prop( 'disabled', false );
     } );
@@ -110,8 +108,6 @@
     }
 
     // WC doesn't reliably pass fragments via the event, so we fetch them ourselves.
-    // We capture previousSnapshot BEFORE the async call to avoid a race condition
-    // where the snapshot gets overwritten by the time the response comes back.
     function fetchAndAlert() {
         const previousSnapshot = loadSnapshot();
 
@@ -143,8 +139,6 @@
     }
 
     // On page load, seed sessionStorage with the current cart state from PHP.
-    // If this load was triggered by an Update cart click, skip seeding
-    // and let fetchAndAlert handle the diff instead.
     $( function () {
         if ( typeof wcQuantityAlertParams === 'undefined' || ! wcQuantityAlertParams.initialSnapshot ) {
             return;
